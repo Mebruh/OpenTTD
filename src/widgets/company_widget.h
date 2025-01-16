@@ -25,6 +25,8 @@ enum CompanyWidgets : WidgetID {
 	WID_C_DESC_COMPANY_VALUE,         ///< Company value.
 	WID_C_DESC_INFRASTRUCTURE,        ///< Infrastructure.
 	WID_C_DESC_INFRASTRUCTURE_COUNTS, ///< Infrastructure count.
+	WID_C_DESC_CARBON,        ///< carbon.
+
 
 	WID_C_SELECT_BUTTONS,             ///< Selection widget for the button bar.
 	WID_C_NEW_FACE,                   ///< Button to make new face.

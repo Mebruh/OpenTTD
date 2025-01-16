@@ -2136,6 +2136,8 @@ static constexpr NWidgetPart _nested_company_widgets[] = {
 				EndContainer(),
 
 				NWidget(WWT_TEXT, COLOUR_GREY, WID_C_DESC_COMPANY_VALUE), SetDataTip(STR_COMPANY_VIEW_COMPANY_VALUE, STR_NULL), SetFill(1, 0),
+				// Edit made here. 
+				NWidget(WWT_TEXT, COLOUR_GREY, WID_C_DESC_CARBON), SetDataTip(0, STR_NULL), SetFill(1, 0),
 
 				NWidget(NWID_HORIZONTAL), SetPIP(0, WidgetDimensions::unscaled.hsep_normal, 0),
 					NWidget(WWT_TEXT, COLOUR_GREY, WID_C_DESC_INFRASTRUCTURE), SetDataTip(STR_COMPANY_VIEW_INFRASTRUCTURE, STR_NULL),  SetAlignment(SA_LEFT | SA_TOP),

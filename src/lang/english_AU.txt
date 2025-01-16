@@ -3430,7 +3430,7 @@ STR_TOWN_DATA_ERROR_BAD_COORDINATE                              :{WHITE}{STRING}
 STR_TOWN_DATA_ERROR_FAILED_TO_FOUND_TOWN                        :{WHITE}Could not find valid location to found {NUM} town{P "" s}. Created {P "a " ""}sign{P "" s} at the intended location{P "" s} instead
 
 # NewGRF settings
-STR_NEWGRF_SETTINGS_CAPTION                                     :{WHITE}NewGRF Settings
+STR_NEWGRF_SETTINGS_CAPTION                                     :{WHITE}Mod NewGRF Settings
 STR_NEWGRF_SETTINGS_INFO_TITLE                                  :{WHITE}Detailed NewGRF information
 STR_NEWGRF_SETTINGS_ACTIVE_LIST                                 :{WHITE}Active NewGRF files
 STR_NEWGRF_SETTINGS_INACTIVE_LIST                               :{WHITE}Inactive NewGRF files
