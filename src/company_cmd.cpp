@@ -72,6 +72,7 @@ Company::Company(uint16_t name_1, bool is_ai)
 	this->clear_limit        = (uint32_t)_settings_game.construction.clear_frame_burst << 16;
 	this->tree_limit         = (uint32_t)_settings_game.construction.tree_frame_burst << 16;
 	this->build_object_limit = (uint32_t)_settings_game.construction.build_object_frame_burst << 16;
+	this->carbon_cost_of_roads = 0; //actually miles of road
 
 	InvalidateWindowData(WC_PERFORMANCE_DETAIL, 0, INVALID_COMPANY);
 }

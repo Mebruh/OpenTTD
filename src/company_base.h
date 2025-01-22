@@ -146,6 +146,8 @@ struct Company : CompanyProperties, CompanyPool::PoolItem<&_company_pool> {
 
 	CompanyInfrastructure infrastructure; ///< NOSAVE: Counts of company owned infrastructure.
 
+	uint64_t carbon_cost_of_roads; // actually miles of road
+
 	FreeUnitIDGenerator freeunits[VEH_COMPANY_END];
 	FreeUnitIDGenerator freegroups;
 

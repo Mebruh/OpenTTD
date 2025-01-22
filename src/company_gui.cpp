@@ -2339,6 +2339,12 @@ struct CompanyWindow : Window
 			y += GetCharacterHeight(FS_NORMAL);
 		}
 
+		if (c->carbon_cost_of_roads != 0) {
+			SetDParam(0, c->carbon_cost_of_roads);
+			DrawString(r.left, r.right, y, STR_COMPANY_VIEW_CARBON_COST_OF_ROADS);
+			y += GetCharacterHeight(FS_NORMAL);
+		}
+
 		if (c->infrastructure.water != 0) {
 			SetDParam(0, c->infrastructure.water);
 			DrawString(r.left, r.right, y, STR_COMPANY_VIEW_INFRASTRUCTURE_WATER);

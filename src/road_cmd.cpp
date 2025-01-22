@@ -194,10 +194,14 @@ void UpdateCompanyRoadInfrastructure(RoadType rt, Owner o, int count)
 	Company *c = Company::GetIfValid(o);
 	if (c == nullptr) return;
 
+	// add code here 
+
 	if (count < 0) {
 		c->infrastructure.road[rt] -= count*68; // Increase the count on removal
+		// add road removed after testing that adding road miles works
 	} else {
 		c->infrastructure.road[rt] += count*68; // Normal addition for construction
+		c->carbon_cost_of_roads += count; //actually miles of road 
 	}
 	DirtyCompanyInfrastructureWindows(c->index);
 }
