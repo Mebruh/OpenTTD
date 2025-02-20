@@ -25,6 +25,8 @@
 #include "timer/timer_game_tick.h"
 #include "tree_cmd.h"
 #include "landscape_cmd.h"
+#include "company_base.h"
+
 
 #include "table/strings.h"
 #include "table/tree_land.h"
@@ -418,7 +420,12 @@ CommandCost CmdPlantTree(DoCommandFlag flags, TileIndex tile, TileIndex start_ti
 				if (flags & DC_EXEC) {
 					AddTreeCount(current_tile, 1);
 					MarkTileDirtyByTile(current_tile);
-					if (c != nullptr) c->tree_limit -= 1 << 16;
+					if (c != nullptr) {
+						c->tree_limit -= 1 << 16;
+						if (c->carbon_cost_of_roads > 0) {
+							c->carbon_cost_of_roads--;
+						}
+					}
 				}
 				/* 2x as expensive to add more trees to an existing tile */
 				cost.AddCost(_price[PR_BUILD_TREES] * 2);
@@ -485,7 +492,12 @@ CommandCost CmdPlantTree(DoCommandFlag flags, TileIndex tile, TileIndex start_ti
 					/* Plant full grown trees in scenario editor */
 					PlantTreesOnTile(current_tile, treetype, 0, _game_mode == GM_EDITOR ? TreeGrowthStage::Grown : TreeGrowthStage::Growing1);
 					MarkTileDirtyByTile(current_tile);
-					if (c != nullptr) c->tree_limit -= 1 << 16;
+					if (c != nullptr) {
+						c->tree_limit -= 1 << 16;
+						if (c->carbon_cost_of_roads > 0) {
+							c->carbon_cost_of_roads--;
+						}
+					}
 
 					/* When planting rainforest-trees, set tropiczone to rainforest in editor. */
 					if (_game_mode == GM_EDITOR && IsInsideMM(treetype, TREE_RAINFOREST, TREE_CACTUS)) {
