@@ -2136,7 +2136,7 @@ static constexpr NWidgetPart _nested_company_widgets[] = {
 				EndContainer(),
 
 				NWidget(WWT_TEXT, COLOUR_GREY, WID_C_DESC_COMPANY_VALUE), SetDataTip(STR_COMPANY_VIEW_COMPANY_VALUE, STR_NULL), SetFill(1, 0),
-				// Edit made here. 
+				// Some stuff I need to look at later. 
 				NWidget(WWT_TEXT, COLOUR_GREY, WID_C_DESC_CARBON), SetDataTip(0, STR_NULL), SetFill(1, 0),
 
 				NWidget(NWID_HORIZONTAL), SetPIP(0, WidgetDimensions::unscaled.hsep_normal, 0),
@@ -2342,6 +2342,12 @@ struct CompanyWindow : Window
 		if (c->carbon_cost_of_roads != 0) {
 			SetDParam(0, c->carbon_cost_of_roads);
 			DrawString(r.left, r.right, y, STR_COMPANY_VIEW_CARBON_COST_OF_ROADS);
+			y += GetCharacterHeight(FS_NORMAL);
+		}
+
+		if (c->total_train_carbon != 0) {
+			SetDParam(0, c->total_train_carbon);
+			DrawString(r.left, r.right, y, STR_COMPANY_VIEW_TOTAL_TRAIN_CARBON);
 			y += GetCharacterHeight(FS_NORMAL);
 		}
 

@@ -5904,3 +5904,4 @@ STR_SHIP                                                        :{BLACK}{SHIP}
 STR_TOOLBAR_RAILTYPE_VELOCITY                                   :{STRING} ({VELOCITY})
 
 STR_COMPANY_VIEW_CARBON_COST_OF_ROADS                           :{WHITE}{COMMA} km of road built
+STR_COMPANY_VIEW_TOTAL_TRAIN_CARBON                             :{WHITE}{COMMA} Tonnes of carbon produced by trains

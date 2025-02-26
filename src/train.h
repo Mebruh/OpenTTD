@@ -90,7 +90,7 @@ struct Train final : public GroundVehicle<Train, VEH_TRAIN> {
 	uint16_t flags;
 	uint16_t crash_anim_pos; ///< Crash animation counter.
 	uint16_t wait_counter; ///< Ticks waiting in front of a signal, ticks being stuck or a counter for forced proceeding through signals.
-
+	uint64_t distance_traveled = 0; // Here is the change 
 	TrainCache tcache;
 
 	/* Link between the two ends of a multiheaded engine */

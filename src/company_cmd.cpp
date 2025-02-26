@@ -73,9 +73,12 @@ Company::Company(uint16_t name_1, bool is_ai)
 	this->tree_limit         = (uint32_t)_settings_game.construction.tree_frame_burst << 16;
 	this->build_object_limit = (uint32_t)_settings_game.construction.build_object_frame_burst << 16;
 	this->carbon_cost_of_roads = 0; //actually miles of road
+	this->total_train_carbon = 0;
 
 	InvalidateWindowData(WC_PERFORMANCE_DETAIL, 0, INVALID_COMPANY);
 }
+
+
 
 /** Destructor. */
 Company::~Company()

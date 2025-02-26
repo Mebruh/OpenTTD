@@ -38,6 +38,7 @@
 #include "misc_cmd.h"
 #include "timer/timer_game_calendar.h"
 #include "timer/timer_game_economy.h"
+#include "company_base.h" // change here
 
 #include "table/strings.h"
 #include "table/train_sprites.h"
@@ -4118,7 +4119,10 @@ bool Train::Tick()
 	if (this->IsFrontEngine()) {
 		PerformanceAccumulator framerate(PFE_GL_TRAINS);
 
-		if (!(this->vehstatus & VS_STOPPED) || this->cur_speed > 0) this->running_ticks++;
+		if (!(this->vehstatus & VS_STOPPED) || this->cur_speed > 0) {
+			this->running_ticks++;
+			this->distance_traveled += this->GetCurrentSpeed();
+		};
 
 		this->current_order_time++;
 
@@ -4180,6 +4184,11 @@ static void CheckIfTrainNeedsService(Train *v)
 /** Calendar day handler. */
 void Train::OnNewCalendarDay()
 {
+	Company *c = Company::Get(this->owner);
+	constexpr double CARBON_MULTIPLIER = 0.05;  // Example multiplier may have to be turned into a whole number 
+
+	c->total_train_carbon += this->distance_traveled * CARBON_MULTIPLIER;  // Add to company total
+	this->distance_traveled = 0;
 	AgeVehicle(this);
 }
 
