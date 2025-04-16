@@ -2338,7 +2338,7 @@ struct CompanyWindow : Window
 			DrawString(r.left, r.right, y, STR_COMPANY_VIEW_INFRASTRUCTURE_ROAD);
 			y += GetCharacterHeight(FS_NORMAL);
 		}
-
+		// Additions
 		if (c->carbon_cost_of_roads != 0) {
 			SetDParam(0, c->carbon_cost_of_roads);
 			DrawString(r.left, r.right, y, STR_COMPANY_VIEW_CARBON_COST_OF_ROADS);
@@ -2348,6 +2348,24 @@ struct CompanyWindow : Window
 		if (c->total_train_carbon != 0) {
 			SetDParam(0, c->total_train_carbon);
 			DrawString(r.left, r.right, y, STR_COMPANY_VIEW_TOTAL_TRAIN_CARBON);
+			y += GetCharacterHeight(FS_NORMAL);
+		}
+
+		if (c->total_electric_train_carbon != 0) {
+			SetDParam(0, c->total_electric_train_carbon);
+			DrawString(r.left, r.right, y, STR_COMPANY_VIEW_TOTAL_ELECTRIC_TRAIN_CARBON);
+			y += GetCharacterHeight(FS_NORMAL);
+		}
+
+		if (c->carbon_prod_train != 0) {
+			SetDParam(0, c->carbon_prod_train);
+			DrawString(r.left, r.right, y, STR_COMPANY_VIEW_PROD_ELECTRIC_TRAIN_CARBON);
+			y += GetCharacterHeight(FS_NORMAL);
+		}
+
+		if (c->tree_count != 0) {
+			SetDParam(0, c->tree_count);
+			DrawString(r.left, r.right, y, STR_COMPANY_VIEW_TREE_COUNT);
 			y += GetCharacterHeight(FS_NORMAL);
 		}
 

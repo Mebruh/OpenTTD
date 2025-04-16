@@ -148,6 +148,10 @@ struct Company : CompanyProperties, CompanyPool::PoolItem<&_company_pool> {
 
 	uint64_t carbon_cost_of_roads; // actually miles of road
 	uint64_t total_train_carbon;
+	uint64_t total_electric_train_carbon;
+	uint64_t carbon_prod_train;
+	uint64_t tree_count;
+
 
 	FreeUnitIDGenerator freeunits[VEH_COMPANY_END];
 	FreeUnitIDGenerator freegroups;

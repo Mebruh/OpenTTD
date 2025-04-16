@@ -3920,7 +3920,7 @@ STR_COMPANY_VIEW_VEHICLES_NONE                                  :{WHITE}None
 STR_COMPANY_VIEW_COMPANY_VALUE                                  :{GOLD}Company value: {WHITE}{CURRENCY_LONG}
 STR_COMPANY_VIEW_INFRASTRUCTURE                                 :{GOLD}Infrastructure:
 STR_COMPANY_VIEW_INFRASTRUCTURE_RAIL                            :{WHITE}{COMMA} rail piece{P "" s}
-STR_COMPANY_VIEW_INFRASTRUCTURE_ROAD                            :{WHITE}{COMMA} Tonnes of carbon emitted during road productio{P ""n}
+STR_COMPANY_VIEW_INFRASTRUCTURE_ROAD                            :{WHITE}{COMMA} Kilograms of Embodied Carbon Produced by road constructio{P ""n}
 STR_COMPANY_VIEW_INFRASTRUCTURE_WATER                           :{WHITE}{COMMA} water tile{P "" s}
 STR_COMPANY_VIEW_INFRASTRUCTURE_STATION                         :{WHITE}{COMMA} station tile{P "" s}
 STR_COMPANY_VIEW_INFRASTRUCTURE_AIRPORT                         :{WHITE}{COMMA} airport{P "" s}
@@ -3959,7 +3959,7 @@ STR_BUY_COMPANY_HOSTILE_TAKEOVER                                :{WHITE}In a hos
 STR_COMPANY_INFRASTRUCTURE_VIEW_CAPTION                         :{WHITE}Infrastructure of {COMPANY}
 STR_COMPANY_INFRASTRUCTURE_VIEW_RAIL_SECT                       :{GOLD}Rail pieces:
 STR_COMPANY_INFRASTRUCTURE_VIEW_SIGNALS                         :{WHITE}Signals
-STR_COMPANY_INFRASTRUCTURE_VIEW_ROAD_SECT                       :{GOLD}Embodied Carbon of roads in tonnes:
+STR_COMPANY_INFRASTRUCTURE_VIEW_ROAD_SECT                       :{GOLD}Embodied Carbon Produced by road construction in Kilograms:
 STR_COMPANY_INFRASTRUCTURE_VIEW_TRAM_SECT                       :{GOLD}Streetcar pieces:
 STR_COMPANY_INFRASTRUCTURE_VIEW_WATER_SECT                      :{GOLD}Water tiles:
 STR_COMPANY_INFRASTRUCTURE_VIEW_CANALS                          :{WHITE}Canals
@@ -5905,4 +5905,7 @@ STR_TOOLBAR_RAILTYPE_VELOCITY                                   :{STRING} ({VELO
 
 STR_COMPANY_VIEW_CARBON_COST_OF_ROADS                           :{WHITE}{COMMA} km of road built
 STR_COMPANY_VIEW_TOTAL_TRAIN_CARBON                             :{WHITE}{COMMA} Tonnes of carbon produced by trains
+STR_COMPANY_VIEW_TOTAL_ELECTRIC_TRAIN_CARBON                    :{WHITE}{COMMA} Carbon intensity of electricity used to charge E-trains
+STR_COMPANY_VIEW_PROD_ELECTRIC_TRAIN_CARBON                     :{WHITE}{COMMA} Tonnes of Carbon emitted during E-trains production
+STR_COMPANY_VIEW_TREE_COUNT                                     :{WHITE}{COMMA} Trees cut down 
 

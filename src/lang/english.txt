@@ -5905,3 +5905,6 @@ STR_TOOLBAR_RAILTYPE_VELOCITY                                   :{STRING} ({VELO
 
 STR_COMPANY_VIEW_CARBON_COST_OF_ROADS                           :{WHITE}{COMMA} km of road built
 STR_COMPANY_VIEW_TOTAL_TRAIN_CARBON                             :{WHITE}{COMMA} Tonnes of carbon produced by trains
+STR_COMPANY_VIEW_TOTAL_ELECTRIC_TRAIN_CARBON                    :{WHITE}{COMMA} Carbon intensity of electricity used to charge E-trains
+STR_COMPANY_VIEW_PROD_ELECTRIC_TRAIN_CARBON                     :{WHITE}{COMMA} Tonnes of Carbon emitted during E-trains production
+STR_COMPANY_VIEW_TREE_COUNT                                     :{WHITE}{COMMA} Trees cut down 

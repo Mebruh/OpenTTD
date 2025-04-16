@@ -197,10 +197,10 @@ void UpdateCompanyRoadInfrastructure(RoadType rt, Owner o, int count)
 	// add code here 
 
 	if (count < 0) {
-		c->infrastructure.road[rt] -= count*100; // Increase the count on removal
+		c->infrastructure.road[rt] -= count*15000; // Increase the count on removal
 		c->carbon_cost_of_roads += count; // road km removed 
 	} else {
-		c->infrastructure.road[rt] += count*880; // Normal addition for construction
+		c->infrastructure.road[rt] += count* 880300; // Normal addition for construction
 		c->carbon_cost_of_roads += count; //actually miles of road 
 	}
 	DirtyCompanyInfrastructureWindows(c->index);

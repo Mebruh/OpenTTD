@@ -28,6 +28,7 @@
 #include "company_base.h"
 
 
+
 #include "table/strings.h"
 #include "table/tree_land.h"
 #include "table/clear_land.h"
@@ -422,9 +423,6 @@ CommandCost CmdPlantTree(DoCommandFlag flags, TileIndex tile, TileIndex start_ti
 					MarkTileDirtyByTile(current_tile);
 					if (c != nullptr) {
 						c->tree_limit -= 1 << 16;
-						if (c->carbon_cost_of_roads > 0) {
-							c->carbon_cost_of_roads--;
-						}
 					}
 				}
 				/* 2x as expensive to add more trees to an existing tile */
@@ -494,9 +492,6 @@ CommandCost CmdPlantTree(DoCommandFlag flags, TileIndex tile, TileIndex start_ti
 					MarkTileDirtyByTile(current_tile);
 					if (c != nullptr) {
 						c->tree_limit -= 1 << 16;
-						if (c->carbon_cost_of_roads > 0) {
-							c->carbon_cost_of_roads--;
-						}
 					}
 
 					/* When planting rainforest-trees, set tropiczone to rainforest in editor. */
@@ -620,8 +615,13 @@ static CommandCost ClearTile_Trees(TileIndex tile, DoCommandFlag flags)
 		if (t != nullptr) ChangeTownRating(t, RATING_TREE_DOWN_STEP, RATING_TREE_MINIMUM, flags);
 	}
 
-	num = GetTreeCount(tile);
+	num = GetTreeCount(tile); 
 	if (IsInsideMM(GetTreeType(tile), TREE_RAINFOREST, TREE_CACTUS)) num *= 4;
+
+	if ((flags & DC_EXEC) && Company::IsValidID(_current_company)) {
+		Company *c = Company::Get(_current_company);
+		c->tree_count += num;
+	}
 
 	if (flags & DC_EXEC) DoClearSquare(tile);
 

@@ -4185,11 +4185,23 @@ static void CheckIfTrainNeedsService(Train *v)
 void Train::OnNewCalendarDay()
 {
 	Company *c = Company::Get(this->owner);
-	constexpr double CARBON_MULTIPLIER = 0.05;  // Example multiplier may have to be turned into a whole number 
 
-	c->total_train_carbon += this->distance_traveled * CARBON_MULTIPLIER;  // Add to company total
-	this->distance_traveled = 0;
+	const Engine *engine = Engine::Get(this->engine_type);
+	if (engine == nullptr) return;
+
+	// Only count the carbon if the train is moving.
+	if (this->distance_traveled > 0) {
+		if (engine->u.rail.engclass == EC_STEAM || engine->u.rail.engclass == EC_DIESEL) {
+			constexpr double CARBON_MULTIPLIER = 1;
+			c->total_train_carbon += this->distance_traveled * CARBON_MULTIPLIER;
+		} else if (engine->u.rail.engclass == EC_ELECTRIC) {
+			c->total_electric_train_carbon += 1; 
+		}
+	}
+
+	this->distance_traveled = 0; 
 	AgeVehicle(this);
+	
 }
 
 /** Economy day handler. */

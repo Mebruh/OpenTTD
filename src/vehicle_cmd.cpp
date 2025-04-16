@@ -37,6 +37,7 @@
 #include "roadveh_cmd.h"
 #include "train_cmd.h"
 #include "ship_cmd.h"
+#include "company_base.h"
 #include <sstream>
 #include <iomanip>
 
@@ -99,6 +100,14 @@ std::tuple<CommandCost, VehicleID, uint, uint16_t, CargoArray> CmdBuildVehicle(D
 
 	const Engine *e = Engine::Get(eid);
 	CommandCost value(EXPENSES_NEW_VEHICLES, e->GetCost());
+	Company *c = Company::Get(_current_company);
+
+	if ((flags & DC_EXEC) != 0) {  // Only execute if actually building
+		if (e->u.rail.engclass == EC_ELECTRIC) {
+			constexpr uint64_t ELECTRIC_TRAIN_BUILD_CARBON = 500;
+			c->carbon_prod_train += ELECTRIC_TRAIN_BUILD_CARBON;
+		}
+	}
 
 	/* Engines without valid cargo should not be available */
 	CargoID default_cargo = e->GetDefaultCargoType();
