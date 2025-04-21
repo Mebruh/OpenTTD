@@ -76,7 +76,9 @@ Company::Company(uint16_t name_1, bool is_ai)
 	this->total_train_carbon = 0;
 	this->total_electric_train_carbon = 0;
 	this->carbon_prod_train = 0;
-	this->tree_count;
+	this->tree_count = 0;
+	this->tree_seq = 0;
+	this->tree_carbon_released = 0;
 
 	InvalidateWindowData(WC_PERFORMANCE_DETAIL, 0, INVALID_COMPANY);
 }

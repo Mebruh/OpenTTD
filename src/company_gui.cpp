@@ -2369,6 +2369,18 @@ struct CompanyWindow : Window
 			y += GetCharacterHeight(FS_NORMAL);
 		}
 
+		if (c->tree_seq != 0) {
+			SetDParam(0, c->tree_seq);
+			DrawString(r.left, r.right, y, STR_COMPANY_VIEW_TREE_SEQ);
+			y += GetCharacterHeight(FS_NORMAL);
+		}
+
+		if (c->tree_carbon_released != 0) {
+			SetDParam(0, c->tree_carbon_released);
+			DrawString(r.left, r.right, y, STR_COMPANY_VIEW_TREE_CARBON);
+			y += GetCharacterHeight(FS_NORMAL);
+		}
+
 		if (c->infrastructure.water != 0) {
 			SetDParam(0, c->infrastructure.water);
 			DrawString(r.left, r.right, y, STR_COMPANY_VIEW_INFRASTRUCTURE_WATER);

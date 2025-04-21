@@ -620,7 +620,9 @@ static CommandCost ClearTile_Trees(TileIndex tile, DoCommandFlag flags)
 
 	if ((flags & DC_EXEC) && Company::IsValidID(_current_company)) {
 		Company *c = Company::Get(_current_company);
-		c->tree_count += num;
+		c->tree_count += num * 62300;
+		c->tree_seq += num * 310683870;
+		c->tree_carbon_released += num * 59637500;
 	}
 
 	if (flags & DC_EXEC) DoClearSquare(tile);

@@ -151,6 +151,8 @@ struct Company : CompanyProperties, CompanyPool::PoolItem<&_company_pool> {
 	uint64_t total_electric_train_carbon;
 	uint64_t carbon_prod_train;
 	uint64_t tree_count;
+	uint64_t tree_seq;
+	uint64_t tree_carbon_released;
 
 
 	FreeUnitIDGenerator freeunits[VEH_COMPANY_END];

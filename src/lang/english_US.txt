@@ -5907,5 +5907,7 @@ STR_COMPANY_VIEW_CARBON_COST_OF_ROADS                           :{WHITE}{COMMA} 
 STR_COMPANY_VIEW_TOTAL_TRAIN_CARBON                             :{WHITE}{COMMA} Tonnes of carbon produced by trains
 STR_COMPANY_VIEW_TOTAL_ELECTRIC_TRAIN_CARBON                    :{WHITE}{COMMA} Carbon intensity of electricity used to charge E-trains
 STR_COMPANY_VIEW_PROD_ELECTRIC_TRAIN_CARBON                     :{WHITE}{COMMA} Tonnes of Carbon emitted during E-trains production
-STR_COMPANY_VIEW_TREE_COUNT                                     :{WHITE}{COMMA} Trees cut down 
+STR_COMPANY_VIEW_TREE_COUNT                                     :{WHITE}{COMMA} Trees cut down
+STR_COMPANY_VIEW_TREE_SEQ                                       :{WHITE}{COMMA} kg of future carbon sequestration lost
+STR_COMPANY_VIEW_TREE_CARBON                                    :{WHITE}{COMMA} Kg of carbon released during tree felling
 
